@@ -17,7 +17,7 @@ public class HeaderMenuTest extends BaseTest {
     }
 
     @Test
-    public void testMenuStore(){
+    public void testMenuStore() {
         getDriver().findElement(By.xpath("//div//li[@id='menu-item-1227']")).click();
         WebElement store = getDriver().findElement(
                 By.xpath("//div//header[@class='woocommerce-products-header']"));
@@ -26,10 +26,18 @@ public class HeaderMenuTest extends BaseTest {
     }
 
     @Test
-    public void testAccountLogin() {
-        getDriver().findElement(By.xpath("//li[@id='menu-item-1237']")).click();
-        WebElement text = getDriver().findElement(By.xpath("//h1[@class ='has-text-align-center']"));
+    public void testMenuMen() {
+        getDriver().findElement(By.xpath("//li[@id='menu-item-1228']")).click();
+        WebElement men = getDriver().findElement(By.xpath("//div//header[@class='woocommerce-products-header']"));
 
-        Assert.assertEquals(text.getText(), "Account");
+        Assert.assertEquals(men.getText(), "Men");
+    }
+
+    @Test
+    public void testMenuWomen() {
+        getDriver().findElement(By.xpath("//li[@id='menu-item-1229']")).click();
+        WebElement women = getDriver().findElement(By.xpath("//h1[@class='woocommerce-products-header__title page-title']"));
+
+        Assert.assertEquals(women.getText(),"Women");
     }
 }
