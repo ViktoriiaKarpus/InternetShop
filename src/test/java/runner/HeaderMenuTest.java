@@ -18,6 +18,15 @@ public class HeaderMenuTest extends BaseTest {
     }
 
     @Test
+    public void testMenuStore(){
+        getDriver().findElement(By.xpath("//div//li[@id='menu-item-1227']")).click();
+        WebElement store = getDriver().findElement(
+                By.xpath("//div//header[@class='woocommerce-products-header']"));
+
+        Assert.assertEquals(store.getText(), "Store");
+    }
+
+    @Test
     public void testAccountLogin() {
         getDriver().findElement(By.xpath("//li[@id='menu-item-1237']")).click();
         WebElement text = getDriver().findElement(By.xpath("//h1[@class ='has-text-align-center']"));
