@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 
 public class HeaderMenuTest extends BaseTest {
 
@@ -58,5 +60,12 @@ public class HeaderMenuTest extends BaseTest {
         WebElement about = getDriver().findElement(By.xpath("//div[@class='wp-block-cover__inner-container']"));
 
         Assert.assertEquals(about.getText(),"About Us");
+    }
+
+    @Test
+    public void testCountNumberOfMenuInHeader() {
+        List<WebElement> numberOfMenu = getDriver().findElements(By.cssSelector(".site-header-primary-section-right .menu-item"));
+
+        Assert.assertEquals(numberOfMenu.size(),8);
     }
 }
