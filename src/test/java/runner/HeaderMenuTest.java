@@ -17,6 +17,7 @@ public class HeaderMenuTest extends BaseTest {
 
         Assert.assertEquals(getDriver().getTitle(), "AskOmDch – Become a Selenium automation expert!");
     }
+
     @Test
     public void testMenuStore() {
         getDriver().findElement(By.xpath("//div//li[@id='menu-item-1227']")).click();
@@ -25,6 +26,7 @@ public class HeaderMenuTest extends BaseTest {
 
         Assert.assertEquals(store.getText(), "Store");
     }
+
     @Test
     public void testMenuMen() {
         getDriver().findElement(By.xpath("//li[@id='menu-item-1228']")).click();
@@ -32,6 +34,7 @@ public class HeaderMenuTest extends BaseTest {
 
         Assert.assertEquals(men.getText(), "Men");
     }
+
     @Test
     public void testMenuWomen() {
         getDriver().findElement(By.xpath("//li[@id='menu-item-1229']")).click();
@@ -39,6 +42,7 @@ public class HeaderMenuTest extends BaseTest {
 
         Assert.assertEquals(women.getText(), "Women");
     }
+
     @Test
     public void testMenuAccessories() {
         getDriver().findElement(By.xpath("//li[@id='menu-item-1230']")).click();
@@ -46,12 +50,13 @@ public class HeaderMenuTest extends BaseTest {
 
         Assert.assertEquals(accessories.getText(), "Accessories");
     }
+
     @Test
     public void testMenuAccount() {
         getDriver().findElement(By.xpath("//li[@id='menu-item-1237']")).click();
         WebElement account = getDriver().findElement(By.xpath("//div[@class='wp-block-cover__inner-container']/h1"));
 
-        Assert.assertEquals(account.getText(),"Account");
+        Assert.assertEquals(account.getText(), "Account");
     }
 
     @Test
@@ -59,13 +64,22 @@ public class HeaderMenuTest extends BaseTest {
         getDriver().findElement(By.xpath("//li[@id='menu-item-1232']")).click();
         WebElement about = getDriver().findElement(By.xpath("//div[@class='wp-block-cover__inner-container']"));
 
-        Assert.assertEquals(about.getText(),"About Us");
+        Assert.assertEquals(about.getText(), "About Us");
     }
 
     @Test
     public void testCountNumberOfMenuInHeader() {
         List<WebElement> numberOfMenu = getDriver().findElements(By.cssSelector(".site-header-primary-section-right .menu-item"));
 
-        Assert.assertEquals(numberOfMenu.size(),8);
+        Assert.assertEquals(numberOfMenu.size(), 8);
+    }
+
+    @Test
+    public void testCardIsClickable() {
+        getDriver().findElement(By.cssSelector(".site-header-primary-section-right .ast-builder-menu-1")).click();
+
+        WebElement cart = getDriver().findElement(By.xpath("//div[@class='wp-block-group__inner-container']/h1"));
+
+        Assert.assertEquals(cart.getText(),"Cart");
     }
 }
