@@ -82,4 +82,40 @@ public class HeaderMenuTest extends BaseTest {
 
         Assert.assertEquals(cart.getText(),"Cart");
     }
+
+    @Test
+    public void testMainTitle() {
+       WebElement title =  getDriver().findElement(By.xpath("//*[contains(text(),'Raining Offers for Hot Summer!')]"));
+
+        Assert.assertEquals(title.getText(),"Raining Offers for Hot Summer!");
+    }
+
+    @Test
+    public void testDiscountMessage() {
+        WebElement text = getDriver().findElement(By.xpath("//h3[contains(text(),'25% OFF On all products')]"));
+
+        Assert.assertEquals(text.getText(),"25% OFF On all products");
+    }
+
+    @Test
+    public void testClickButtonShopNow() {
+       getDriver().findElement(By.xpath("//div/a[@href='/store']")).click();
+
+        Assert.assertEquals(getDriver().getCurrentUrl(),"https://askomdch.com/store");
+    }
+
+    @Test
+    public void testClickButtonFindMore() {
+        getDriver().findElement(By.xpath("//div/a[@href='https://askomdch.com/contact-us/']")).click();
+
+        Assert.assertEquals(getDriver().getCurrentUrl(),"https://askomdch.com/contact-us/");
+    }
+
+    @Test
+    public void testBackGroundColorOfTheHeader() {
+       String backgroundColorOfTheHeader = getDriver().findElement(By.xpath("//div[@class='wp-block-cover alignfull has-background-dim']"))
+              .getCssValue("background-color");
+
+        Assert.assertEquals(backgroundColorOfTheHeader, "rgba(0, 29, 53, 1)");
+    }
 }
