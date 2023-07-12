@@ -80,35 +80,35 @@ public class HeaderMenuTest extends BaseTest {
 
         WebElement cart = getDriver().findElement(By.xpath("//div[@class='wp-block-group__inner-container']/h1"));
 
-        Assert.assertEquals(cart.getText(),"Cart");
+        Assert.assertEquals(cart.getText(), "Cart");
     }
 
     @Test
     public void testMainTitle() {
-       WebElement title =  getDriver().findElement(By.xpath("//*[contains(text(),'Raining Offers for Hot Summer!')]"));
+        WebElement title = getDriver().findElement(By.xpath("//*[contains(text(),'Raining Offers for Hot Summer!')]"));
 
-        Assert.assertEquals(title.getText(),"Raining Offers for Hot Summer!");
+        Assert.assertEquals(title.getText(), "Raining Offers for Hot Summer!");
     }
 
     @Test
     public void testDiscountMessage() {
         WebElement text = getDriver().findElement(By.xpath("//h3[contains(text(),'25% OFF On all products')]"));
 
-        Assert.assertEquals(text.getText(),"25% OFF On all products");
+        Assert.assertEquals(text.getText(), "25% OFF On all products");
     }
 
     @Test
     public void testClickButtonShopNow() {
-       getDriver().findElement(By.xpath("//div/a[@href='/store']")).click();
+        getDriver().findElement(By.xpath("//div/a[@href='/store']")).click();
 
-        Assert.assertEquals(getDriver().getCurrentUrl(),"https://askomdch.com/store");
+        Assert.assertEquals(getDriver().getCurrentUrl(), "https://askomdch.com/store");
     }
 
     @Test
     public void testClickButtonFindMore() {
         getDriver().findElement(By.xpath("//div/a[@href='https://askomdch.com/contact-us/']")).click();
 
-        Assert.assertEquals(getDriver().getCurrentUrl(),"https://askomdch.com/contact-us/");
+        Assert.assertEquals(getDriver().getCurrentUrl(), "https://askomdch.com/contact-us/");
     }
 
     @Test
@@ -119,3 +119,5 @@ public class HeaderMenuTest extends BaseTest {
         Assert.assertEquals(backgroundColorOfTheHeader, "rgba(0, 29, 53, 1)");
     }
 }
+
+
