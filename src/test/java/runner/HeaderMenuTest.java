@@ -75,10 +75,9 @@ public class HeaderMenuTest extends BaseTest {
     }
 
     @Test
-    public void testCardIsClickable() {
-        getDriver().findElement(By.cssSelector(".site-header-primary-section-right .ast-builder-menu-1")).click();
-
-        WebElement cart = getDriver().findElement(By.xpath("//div[@class='wp-block-group__inner-container']/h1"));
+    public void testCardIsClickable()  {
+        getDriver().findElement(By.cssSelector("div.ast-cart-menu-wrap")).click();
+        WebElement cart = getDriver().findElement(By.xpath("//h1[contains(text(), 'Cart')]"));
 
         Assert.assertEquals(cart.getText(), "Cart");
     }
